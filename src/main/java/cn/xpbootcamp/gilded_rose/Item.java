@@ -20,6 +20,20 @@ public class Item {
     }
 
     void update() {
+        updateQuality();
+
+        updateSellIn();
+
+        if (isExpired()) {
+            updateQualityAfterExpired();
+        }
+    }
+
+    private boolean isExpired() {
+        return sellIn < 0;
+    }
+
+    private void updateQuality() {
         if (!isAgedBrie()
                 && !isBackstagePass()) {
             if (quality > 0) {
@@ -42,25 +56,27 @@ public class Item {
                 }
             }
         }
+    }
 
+    private void updateSellIn() {
         if (!isSulfuras()) {
             sellIn = sellIn - 1;
         }
+    }
 
-        if (sellIn < 0) {
-            if (!isAgedBrie()) {
-                if (!isBackstagePass()) {
-                    if (quality > 0) {
-                        if (!isSulfuras()) {
-                            quality = quality - 1;
-                        }
+    private void updateQualityAfterExpired() {
+        if (!isAgedBrie()) {
+            if (!isBackstagePass()) {
+                if (quality > 0) {
+                    if (!isSulfuras()) {
+                        quality = quality - 1;
                     }
-                } else {
-                    quality = 0;
                 }
             } else {
-                increaseQuality();
+                quality = 0;
             }
+        } else {
+            increaseQuality();
         }
     }
 
