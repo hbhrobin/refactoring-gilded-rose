@@ -34,39 +34,16 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (isBackstagePass()) {
-            increaseQuality();
-            if (sellIn < 11) {
-                increaseQuality();
-            }
-            if (sellIn < 6) {
-                increaseQuality();
-            }
-            return;
-        }
-        if (isSulfuras()) {
-            return;
-        }
         if (quality > 0) {
             quality = quality - 1;
         }
     }
 
     protected void updateSellIn() {
-        if (isSulfuras()) {
-            return;
-        }
         sellIn = sellIn - 1;
     }
 
     protected void updateQualityAfterExpired() {
-        if (isBackstagePass()) {
-            quality = 0;
-            return;
-        }
-        if (isSulfuras()) {
-            return;
-        }
         if (quality > 0) {
             quality = quality - 1;
         }
@@ -76,13 +53,5 @@ public class Item {
         if (quality < 50) {
             quality = quality + 1;
         }
-    }
-
-    private boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
-    }
-
-    private boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 }
