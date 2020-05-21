@@ -34,19 +34,12 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
     }
 
     protected void updateSellIn() {
-        sellIn = sellIn - 1;
     }
 
     protected void updateQualityAfterExpired() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
     }
 
     protected void increaseQuality() {

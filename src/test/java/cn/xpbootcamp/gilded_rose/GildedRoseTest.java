@@ -76,7 +76,7 @@ class GildedRoseTest {
         if ("Sulfuras, Hand of Ragnaros".equals(name)) {
             return new Sulfuras(sellIn, quality);
         }
-        return new Item(name, sellIn, quality);
+        return new RegularItem(name, sellIn, quality);
 
     }
 
