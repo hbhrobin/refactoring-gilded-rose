@@ -1,4 +1,4 @@
-package cn.xpbootcamp.gilded_rose;
+package cn.xpbootcamp.gilded_rose.items;
 
 public class BackstagePass extends Item {
     public BackstagePass(int sellIn, int quality) {

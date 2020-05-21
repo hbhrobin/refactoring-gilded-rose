@@ -1,4 +1,4 @@
-package cn.xpbootcamp.gilded_rose;
+package cn.xpbootcamp.gilded_rose.items;
 
 public class AgedBrie extends Item {
     public AgedBrie(int sellIn, int quality) {

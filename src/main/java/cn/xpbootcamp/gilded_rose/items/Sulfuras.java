@@ -1,4 +1,4 @@
-package cn.xpbootcamp.gilded_rose;
+package cn.xpbootcamp.gilded_rose.items;
 
 public class Sulfuras extends Item {
     public Sulfuras(int sellIn, int quality) {

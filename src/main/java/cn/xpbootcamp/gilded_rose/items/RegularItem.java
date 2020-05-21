@@ -1,4 +1,4 @@
-package cn.xpbootcamp.gilded_rose;
+package cn.xpbootcamp.gilded_rose.items;
 
 public class RegularItem extends Item {
     public RegularItem(String name, int sellIn, int quality) {
