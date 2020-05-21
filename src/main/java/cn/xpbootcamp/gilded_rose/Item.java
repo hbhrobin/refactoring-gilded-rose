@@ -2,11 +2,11 @@ package cn.xpbootcamp.gilded_rose;
 
 public class Item {
 
-    private String name;
+    protected String name;
 
-    private int sellIn;
+    protected int sellIn;
 
-    private int quality;
+    protected int quality;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
@@ -33,13 +33,7 @@ public class Item {
         return sellIn < 0;
     }
 
-    private void updateQuality() {
-        if (isAgedBrie()) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-            return;
-        }
+    protected void updateQuality() {
         if (isBackstagePass()) {
             increaseQuality();
             if (sellIn < 11) {
@@ -58,18 +52,14 @@ public class Item {
         }
     }
 
-    private void updateSellIn() {
+    protected void updateSellIn() {
         if (isSulfuras()) {
             return;
         }
         sellIn = sellIn - 1;
     }
 
-    private void updateQualityAfterExpired() {
-        if (isAgedBrie()) {
-            increaseQuality();
-            return;
-        }
+    protected void updateQualityAfterExpired() {
         if (isBackstagePass()) {
             quality = 0;
             return;
@@ -82,7 +72,7 @@ public class Item {
         }
     }
 
-    private void increaseQuality() {
+    protected void increaseQuality() {
         if (quality < 50) {
             quality = quality + 1;
         }
@@ -94,9 +84,5 @@ public class Item {
 
     private boolean isBackstagePass() {
         return name.equals("Backstage passes to a TAFKAL80ETC concert");
-    }
-
-    private boolean isAgedBrie() {
-        return name.equals("Aged Brie");
     }
 }
